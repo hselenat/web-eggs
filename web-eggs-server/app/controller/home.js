@@ -6,7 +6,7 @@
  * @Autor: hselenat
  * @Date: 2020-08-01 11:35:34
  * @LastEditors: hselenat
- * @LastEditTime: 2020-08-01 11:58:09
+ * @LastEditTime: 2020-08-01 16:15:35
  * @example: 调用示例
  */
 'use strict'
@@ -16,6 +16,7 @@ const Controller = require('egg').Controller
 class HomeController extends Controller {
   async index() {
     const { ctx } = this
+    console.log('ss')
     ctx.body = 'hi, egg'
   }
 }
