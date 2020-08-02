@@ -6,7 +6,7 @@
  * @Autor: hselenat
  * @Date: 2020-08-01 11:35:34
  * @LastEditors: hselenat
- * @LastEditTime: 2020-08-01 17:04:43
+ * @LastEditTime: 2020-08-02 17:25:29
  * @example: 调用示例
  */
 'use strict'
@@ -20,4 +20,20 @@ module.exports = app => {
 
   // 验证码
   router.get('/captcha', controller.util.captcha)
+
+  router.group({
+    name: 'user',
+    prefix: '/user',
+  }, router => {
+    const {
+      info,
+      register,
+      login,
+      vertify,
+    } = controller.user
+    router.post('/info', info)
+    router.post('/register', register)
+    router.post('/login', login)
+    router.post('/vertify', vertify)
+  })
 }
